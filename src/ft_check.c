@@ -42,7 +42,6 @@ char	**ft_check_argv(int argc, char **argv, t_stacks *st)
 
 void	ft_check_repeated_elements(t_stacks *st)
 {
-	int	fl;
 	int	i;
 	int	j;
 
@@ -50,7 +49,6 @@ void	ft_check_repeated_elements(t_stacks *st)
 	while (i < st->a_len)
 	{
 		j = 0;
-		fl = 1;
 		while (j < st->a_len)
 		{
 			if (st -> stack1[i] == st -> stack1[j] && i != j)
@@ -63,47 +61,30 @@ void	ft_check_repeated_elements(t_stacks *st)
 
 void	ft_check_min_max(char *str, t_stacks *st, char **params, int argc)
 {
-	int		sign;
-	long	result;
-	int		i;
+	long number;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign = -sign;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - 48);
-		i++;
-	}
-	if (result * sign > 2147483647 || result * sign < -2147483648)
+	number = ft_atoi(str);
+	if (number > 2147483647 || number < -2147483648)
 	{
 		ft_free_all_params(params, argc);
 		ft_print_error(st, 1);
 	}
 }
 
-int	ft_is_sorted(int arr_len, int *arr)
+int	ft_is_sorted(int a_len, int *stack_1)
 {
 	int	i;
 	int	j;
 
-	if (arr_len == 0)
+	if (a_len == 0)
 		return (0);
 	i = 0;
-	while (i < arr_len - 1)
+	while (i < a_len - 1)
 	{
 		j = i + 1;
-		while (j < arr_len)
+		while (j < a_len)
 		{
-			if (arr[i] < arr[j])
+			if (stack_1[i] < stack_1[j])
 				return (0);
 			j++;
 		}

@@ -44,6 +44,7 @@ void	ft_sort_lower_nums(t_stacks *st);
 void	ft_sort_stack(t_stacks *stacks);
 
 int		ft_find_min_num_index(int arr_len, int *arr);
+int 	ft_find_max_num(int a_len, int *stack1);
 int		ft_find_corr_ind(int num, int arr_len, int *arr);
 
 int		ft_abs(int num);

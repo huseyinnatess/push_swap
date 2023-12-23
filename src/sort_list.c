@@ -14,28 +14,15 @@
 
 void	ft_sort_three_nums(t_stacks *st)
 {
-	if (ft_is_sorted(st->a_len, st->stack1))
-		return ;
-	if (st->stack1[2] > st->stack1[1] && st->stack1[1] < st->stack1[0]
-		&& st->stack1[2] < st->stack1[0])
-		sa(st);
-	else if (st->stack1[2] > st->stack1[1] && st->stack1[1] > st->stack1[0])
-	{
-		sa(st);
+	int max;
+
+	max = ft_find_max_num(st->a_len, st->stack1);
+	if (st -> stack1[2] == max)
+	    ra(st, 1);
+	else if (st -> stack1[1] == max)
 		rra(st, 1);
-	}
-	else if (st->stack1[2] > st->stack1[1] && st->stack1[1] < st->stack1[0]
-		&& st->stack1[2] > st->stack1[0])
-		ra(st, 1);
-	else if (st->stack1[2] < st->stack1[1] && st->stack1[2] < st->stack1[0]
-		&& st->stack1[1] > st->stack1[0])
-	{
+	if (st -> stack1[2] > st -> stack1[1])
 		sa(st);
-		ra(st, 1);
-	}
-	else if (st -> stack1[2] < st->stack1[1] && st->stack1[2] > st->stack1[0]
-		&& st->stack1[1] > st->stack1[0])
-		rra(st, 1);
 }
 
 static void	ft_push_b(t_stacks *st, int step_a, int step_b)

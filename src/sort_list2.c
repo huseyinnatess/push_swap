@@ -33,6 +33,22 @@ int	ft_find_min_num_index(int arr_len, int *arr)
 	return (min_num_index);
 }
 
+int ft_find_max_num(int a_len, int *stack1)
+{
+	long int max;
+	int i;
+
+	i = 0;
+	max = stack1[0];
+	while (i < a_len)
+	{
+		if (stack1[i] > max)
+			max = stack1[i];
+		i++;
+	}
+	return (max);
+}
+
 static void	ft_push_b(t_stacks *st, int step_a, int step_b)
 {
 	int	i;

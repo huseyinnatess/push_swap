@@ -43,6 +43,7 @@ int	main(int argc, char **argv)
 		ft_check_repeated_elements(stack_a);
 		ft_sort_list(stack_a);
 		ft_reverse_arr(stack_a->a_len, stack_a->stack1);
+		yazdir(stack_a -> stack1, stack_a -> a_len);
 		ft_free_all(stack_a, 2);
 	}
 	return (0);

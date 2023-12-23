@@ -26,13 +26,13 @@ void	ft_print_error(t_stacks *st, int check)
 	exit(1);
 }
 
-void	ft_free_all(t_stacks *st, int fl)
+void	ft_free_all(t_stacks *st, int check)
 {
 	if (st->a_len > 0)
 		free(st->stack1);
 	if (st->b_len > 0)
 		free(st->stack2);
-	if (fl >= 0)
+	if (check >= 0)
 		free(st);
 	exit(0);
 }
